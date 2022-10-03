@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: yellow;
+}
+.container{
+    display: grid;
+    grid-template-columns: 5rem 3fr 1fr;
+    /* grid-template-rows: 5rem 1fr 1fr; */
+    column-gap: 20px;
+    grid-template-areas: 
+    "head head head"
+    "aside main bar"
+    "foot foot foot"
+    ;
+
+}
+.head{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: cornflowerblue;
+    /* border: 2px solid blueviolet; */
+    color: antiquewhite;
+    grid-area: head;
+    position: sticky;
+}
+.leftbar{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: aliceblue;
+    justify-content: space-between;
+    height: 50vh;
+    grid-area: aside;
+    /* justify-content: flex-start; */
+    /* justify-content: space-between; */
+    position: fixed;
+    margin-top: 10%;
+    
+}
+.mainbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    grid-area: main;
+    margin-top: 10%;
+}
+.rightbar{
+    display: flex;
+    height: 100vh;
+    grid-area: bar;
+    justify-content: center;
+    align-items: center;
+
+}
+.foot{
+    background-color: yellow;
+    text-align: center;
+    grid-area: foot;
+}
+@media only screen and (max-width: 728px){
+    .container{
+     max-width: 100%;
+    }
+}
